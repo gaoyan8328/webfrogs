@@ -2,19 +2,29 @@
 syntax on	"语法高亮
 set nu		"显示行号
 
+set smarttab  "只按一下 Backspace 就删除 4 个空格
 set tabstop=4
 set softtabstop=4
 set encoding=utf-8
 set fileencodings=utf-8
 set shiftwidth=4
-set cindent
-set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
+"set cindent
+"set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 
 "-------------omnicppcomplete设置-------------------------
 set nocp 
 filetype plugin on
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
+set tags+=./tags,tags,/usr/include/tags    " 设置tag文件的路径
+set tags+=~/.vim/tagfile/cpp	" 添加c++ STL
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " 显示函数参数列表
+let OmniCpp_MayCompleteDot = 1   " 输入 .  后自动补全
+let OmniCpp_MayCompleteArrow = 1 " 输入 -> 后自动补全
+let OmniCpp_MayCompleteScope = 1 " 输入 :: 后自动补全
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 
 "-------------------分割线--------------------------------
