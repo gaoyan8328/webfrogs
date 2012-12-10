@@ -8,8 +8,8 @@ set softtabstop=4
 set encoding=utf-8
 set fileencodings=utf-8
 set shiftwidth=4
-"set cindent
-"set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
+set cindent
+set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 
 "-------------omnicppcomplete设置-------------------------
 set nocp 
