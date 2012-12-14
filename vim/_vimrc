@@ -11,6 +11,29 @@ set shiftwidth=4
 set cindent
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 
+
+"-------------针对特定操作系统的设置--------------------
+function! MySys()    " 判断操作系统的函数
+if has("win32")
+return "win32"
+elseif has("unix")
+return "unix"
+else
+return "mac"
+endif
+endfunction
+
+
+if MySys() == "mac"		"mac系统的相关配置
+
+" 使用系统粘贴板
+"vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+"nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>p
+
+endif
+
+
+
 "-------------omnicppcomplete设置-------------------------
 set nocp 
 filetype plugin on
